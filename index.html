@@ -1,25 +1,108 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Ejemplo de formas con css">
-        <meta name="autor" content="David Gimenez Plaza">
-        <meta name="keyword" content="triangulo, css, formas">
-
+        <meta name="description" content="Permutaciones de 3 números con java Script">
+        <meta name="autor" content="David Giménez Plaza">
+        <meta name="keyword" content="permutaciones, java Script, factorial">
+        
         <link rel="stylesheet" href="/assents/css/stye.css">
         <title>nombre pagina</title>
     </head>
     <body class="body">
         <header>
-            <h1>Ejemplo de formas creadas con css</h1>
+            <h1>Ordenar 3 números dados de menor a mayor</h1>
         </header>
-        <main>
-            <div class="contenedor"></div>
+        <main class="main">
+
+            <article>
+                <h2>Como calcular el número de posibles permutaciones</h2>
+                <h3>¿Que es la permutación?</h3>
+                <p>Las permutaciones son las posibles combinaciones que se pueden realizar con un número de elementos. Cada posible combinación del grupo de elementos será una permutación.</p>
+                <h3>Cómo calcular las diferentes permutaciones</h3>
+                <p>Para calcular las posibles combinaciones de elementos sacaremos el factorial del número de elementos. En nuestro caso estamos buscando las permutaciones de 3 elementos.</p>
+                <p>3! = 3 * 2 * 1 = 6</p>
+                <p>Por lo que existen seis posibles combinaciones:</p>
+                <table class="tabla--permuta">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>C</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>A</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>B</td>
+                        <td>A</td>
+                    </tr>
+                </table>
+
+            </article>
+            <article>
+                <h3>El códgo sería el siguiente</h3>
+
+                <p>En primer lugar declaramos tres variables, con tres valores aleatorios del 0 al 100. y creamos la variable txt para cargar el texto. </p>
+                <div class="cuadro cuadro--code_medium">
+                    <pre><code>
+let a =    Math.round(Math.random()*100),
+    b =    Math.round(Math.random()*100),
+    c =    Math.round(Math.random()*100);
+let txt = ``;
+                    </code></pre>
+                </div>
+
+                <p>Ahora procedemos a realizar la ordenación</p>
+                <div class="cuadro cuadro--code_medium_2">
+                    <pre><code>
+if          (a &lt; b && b &lt; c)    txt = ` ${a},  ${b},  ${c}`;
+else if     (a &lt; c && c &lt; b)    txt = ` ${a},  ${c},  ${b}`;
+else if     (b &lt; a && a &lt; c)    txt = ` ${b},  ${a},  ${c}`;
+else if     (b &lt; c && c &lt; a)    txt = ` ${b},  ${c},  ${a}`;
+else if     (c &lt; a && a &lt; b)    txt = ` ${c},  ${a},  ${b}`;
+else                            txt = ` ${c},  ${b},  ${a}`;
+                    </code></pre>
+                </div>
+                <p>Ya solo queda imprimir en pantalla</p>
+                <div class="cuadro cuadro--code_medium_2">
+                    <pre><code>
+document.getElementById("cargadorTexto").textContent = txt;
+
+                    </code></pre>
+                </div>
+               <p>Resultado</p>
+                <div class="cuadro">
+                    <span id="cargadorTexto"></span>
+                </div>
+                
+            </article>
         </main>
         <footer class="footer">
-            CVDGP 
-            David Gimenez Plaza
+            <div>
+                CVDGP <br>
+            David Giménez Plaza
+            </div>
         </footer>
+       
+        <script src="/assents/js/main.js"></script>
     </body>
 </html>
