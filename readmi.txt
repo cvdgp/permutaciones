@@ -1,0 +1,2 @@
+En el siguiente repositorio creo una practica de permutaciones de tres elementos para resolver el problema utilizo condicionales if, podríamos iterar con un arreglo y un bucle for. Pero deseo mostrar de una formar simple las 6 posibles combinaciones.
+
